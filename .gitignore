@@ -1,0 +1,12 @@
+cat << 'EOF' > .gitignore
+*.db
+.DS_tore
+tmp/
+log/
+.bundle/
+vendor/bundle/
+.env
+*.log
+public/uploads/
+Gemfile.lock
+EOF
