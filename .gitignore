@@ -1,6 +1,6 @@
 cat << 'EOF' > .gitignore
 *.db
-.DS_tore
+.DS_Store
 tmp/
 log/
 .bundle/
@@ -10,3 +10,6 @@ vendor/bundle/
 public/uploads/
 Gemfile.lock
 EOF
+git log --oneline -2
+git status
+find view -name "*.erb" | sort
