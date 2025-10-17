@@ -8,35 +8,31 @@ configure do
 end
 
 get '/' do
-    "🚀Welcome to HK MODELS BLOG
-
-    このブログは以下の機能を予定しています：
-    📝記事投稿・管理
-    ⛓️アフィリエイトリンク管理
-    🏷️カテゴリ(模型・趣味)
-    📈SEO対応
-
-    開発中...🧰"
+    erb :index
 end
 
-get '/hello' do
-    "Hello World from your future affiliate blog! 🎯"
+# === ブログ機能 ===
+get '/posts' do
+    # 記事一覧ページ
+    erb :'posts/posts_index'
 end
 
-get '/admin' do
-    "管理画面 - 開発予定 📝"
+get '/posts/new' do
+    # 新規投稿フォーム
+    erb :'posts/new_post'
 end
 
-get '/' do
-    "プラモデル在庫管理システム"
+post '/posts' do
+    # 投稿作成処理
+    # title = params[:title] 
+    # content = params[:content]
+    # category = params[:category]
+    redirect '/posts'
 end
 
-#在庫一覧ページ
-get '/kits' do
-    "在庫一覧ページ"
+get '/posts/:id' do
+    # 記事詳細ページ
+    erb :'posts/post_detail'
 end
 
-#在庫登録ページ
-get '/kits/new' do
-    "在庫登録ページ"
-end
+
